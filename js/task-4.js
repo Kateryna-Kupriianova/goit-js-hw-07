@@ -1,28 +1,19 @@
-
-document.getElementById('loginForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const emailInput = this.elements['email'];
-    const passwordInput = this.elements['password'];
-
-    const emailValue = emailInput.value.trim();
-    const passwordValue = passwordInput.value.trim();
-
-    if (emailValue === '' || passwordValue === '') {
-        alert('All form fields must be filled in');
-         return;
-     }
-
-    const formData = {
-        email: emailValue,
-         password: passwordValue
-    };
-
-    console.log(formData);
-
-    this.reset();
- })
-
+const loginForm = document.querySelector("form"); 
+loginForm.addEventListener("submit", handleSubmit);
+function handleSubmit(event) {
+    event.preventDefault(); 
+    const form = event.target;
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+    
+    if (email === "" || password === "") {
+        console.log("All form fields must be filled in");
+    } else {
+        console.log(`Email: ${email}, Password: ${password}`);
+        form.reset();
+    }
+   
+}
 
 
 
