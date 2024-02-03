@@ -24,7 +24,8 @@ const input = document.querySelector('input');
 createBtn.addEventListener('click', function() {
     const amount = Number(input.value);
     
-    if (amount >= 1 && amount <= 100) {
+  if (amount >= 1 && amount <= 100) {
+      destroyBoxes()
       createBoxes(amount);
       input.value = '';
     } else {
